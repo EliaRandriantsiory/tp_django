@@ -9,7 +9,7 @@
       href="{% static 'assets/bootstrap-5.3.2-dist/css/bootstrap.css' %}"
     />
     <link rel="stylesheet" href="{% static 'assets/css/styleHome.css' %}" />
-    <title>Inscription</title>
+    <title>Personne</title>
   </head>
 
   <body>
@@ -42,13 +42,14 @@
 
     <div class="container-fluid">
       <section id="sectioninscription">
-        <h3 id="inscription">Inscription Personne</h3>
+        <h3 id="inscription">Information Personne</h3>
         <div class="card">
           <div class="card">
             <div class="d-flex align-items-center">
               <form action="/personne/ajout" method="post">
                 {% csrf_token %}
                 <div class="form_Inscription">
+                  <input hidden name="id_Utilisateur" type="text" value= "{{ idUtilisateur }}">
                   <div class="personne row g-3">
                     
                     <div class="col-4">
@@ -67,7 +68,7 @@
                         type="date"
                         name="dateinput"
                         class="form-control"
-                        id=""
+                        value="{{date_naissance}}"
                       />
                     </div>
                     <div class="col-2">
@@ -75,20 +76,7 @@
                       {% render_field personne_form.genre class="form-control" %}
                     </div>
                   </div>
-                  <div hidden class="voiture row ">
-                    <div class="col-4">
-                      <label for="inputNom" class="form-label">Num matricule</label>
-                      {% render_field voiture_form.num_matricule class="form-control" %}
-                    </div>
-                    <div class="col-4">
-                      <label for="inputNom" class="form-label">Marque</label>
-                      {% render_field voiture_form.marque class="form-control" %}
-                    </div>
-                    <div class="col-4">
-                      <label for="inputNom" class="form-label">Nom</label>
-                      <input type="file" name="imageVoiture">
-                    </div>
-                  </div>
+                  
                 </div>
                 
                 <div class="btn-submit">
@@ -98,7 +86,7 @@
                       class="btn btn-primary mx-2"
                       style="margin: 10px"
                     >
-                      S'inscrire
+                      Valider
                     </button>
                     <a
                       href="/"
@@ -117,7 +105,7 @@
         {% for p in personnes %}
         <div>
           <p>nom et prénom : {{p.nom}} {{p.prenom}}</p>
-          <p>age : {{p.age}} genre : {{p.genre}}</p>
+          <p>date naissance : {{p.date_naissance}} genre : {{p.genre}}</p>
           <a href="modifier/{{p.id_personne}}">modifier</a>
           <a href="supprimer/{{p.id_personne}}">supprimer</a>
         </div>

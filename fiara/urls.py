@@ -20,6 +20,8 @@ from Personne.views import *
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("", personne_ajout),
-    path("personne/ajout", personne_ajout)
+    path("", personne_ajout, name="home"),
+    path("personne/ajout", personne_ajout),
+    path('supprimer/<int:id>', personnes_supprimer, name="personneSupprimer"),
+    path('modifier/<int:id>', personnes_modifier, name="personneModifier"),
 ]

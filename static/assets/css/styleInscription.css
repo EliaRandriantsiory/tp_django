@@ -1,0 +1,15 @@
+#sectioninscription{
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-color: aquamarine; */
+}
+#sectioninscription .card{
+    padding: 10px;
+    height: 50vh;
+}
+
+#listPersonne{
+    
+}

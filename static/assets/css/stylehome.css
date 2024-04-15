@@ -1,0 +1,15 @@
+#sectioninscription > div > div > div > form > div.form_Inscription{
+    display: flex;
+    flex-direction: column;
+}
+#sectioninscription > div > div > div > form{
+    display: flex;
+    flex-direction: column;
+}
+#sectioninscription > div > div > div > form > div.form_Inscription > div.personne.row.g-3{
+    margin-right: 10px;
+}
+#sectioninscription > div > div > div > form > div.form_Inscription > div.voiture.row{
+    width: 50vw;
+    background-color: aqua;
+}
